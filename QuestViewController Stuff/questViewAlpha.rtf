@@ -1,0 +1,218 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green116\blue0;\red170\green13\blue145;\red92\green38\blue153;
+\red196\green26\blue22;\red28\green0\blue207;\red63\green110\blue116;\red38\green71\blue75;\red46\green13\blue110;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab529
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 //\
+//  QuestViewController.swift\
+//  Neighborhood Quest\
+//\
+//  Created by Kyle Kimery on 11/18/16.\
+//  Copyright \'a9 2016 Kenneth James. All rights reserved.\
+//\
+\cf0 \
+\cf3 import\cf0  UIKit\
+\cf3 import\cf0  CoreData\
+\
+\
+\cf3 class\cf0  QuestViewController: \cf4 UIViewController\cf0 , \cf4 UITextFieldDelegate\cf0  \{\
+    \
+    \cf2 //the timer object is created here\
+\cf0     \cf3 var\cf0  timer = \cf4 NSTimer\cf0 ()\
+    \cf3 var\cf0  timer2 = \cf4 NSTimer\cf0 ()\
+    \
+    \
+    \cf2 //a connection to a text view that displays the quiz question, prompts, etc\
+\cf0     \cf2 //@IBOutlet weak var questTextView: UITextView!\
+\cf0     \cf3 @IBOutlet\cf0  \cf3 weak\cf0  \cf3 var\cf0  questTextView: \cf4 UITextView\cf0 !\
+    \
+    \cf3 @IBOutlet\cf0  \cf3 weak\cf0  \cf3 var\cf0  displayedTimer: \cf4 UILabel\cf0 !\
+    \
+    \cf2 //the text originally displayed in the textview, this can be done differently...\
+\cf0     \cf3 var\cf0  text = \cf5 "Your Quiz has begun!\\nYou will have 30 seconds to answer your question.\\n\\n"\cf0 \
+    \
+    \cf3 var\cf0  timeBase = \cf6 30.0\cf0 \
+    \cf3 var\cf0  currentTime = \cf6 30\cf0  - \cf6 1\cf0 \
+    \cf3 var\cf0  isCorrect = \cf3 false\cf0 \
+    \cf3 var\cf0  isFailed = \cf3 false\cf0 \
+    \cf3 var\cf0  correctAnswerIndex = -\cf6 1\cf0 \
+    \
+    \
+    \
+    \cf2 //This is an action tied to a "start" type button, this must be connected to the GUI!!!!!!\
+\cf0     \cf3 @IBAction\cf0  \cf3 func\cf0  beginQuest(sender: \cf4 AnyObject\cf0 ) \{\
+        \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 text\cf0 \
+        \cf8 getNewQuestion\cf0 ()\
+        \cf7 timer\cf0  = \cf4 NSTimer\cf0 .\cf9 scheduledTimerWithTimeInterval\cf0 (\cf7 timeBase\cf0 , target: \cf3 self\cf0 , selector:\cf5 "outOfTime"\cf0 , userInfo: \cf3 nil\cf0 , repeats: \cf3 false\cf0 )\
+        \cf7 timer2\cf0  = \cf4 NSTimer\cf0 .\cf9 scheduledTimerWithTimeInterval\cf0 (\cf6 1.0\cf0 , target: \cf3 self\cf0 , selector:\cf5 "updateTime"\cf0 , userInfo: \cf3 nil\cf0 , repeats: \cf3 true\cf0 )\
+        \cf3 let\cf0  range = \cf9 NSMakeRange\cf0 (\cf7 questTextView\cf0 .\cf4 text\cf0 .\cf4 characters\cf0 .\cf4 count\cf0  - \cf6 1\cf0 , \cf6 0\cf0 )\
+        \cf7 questTextView\cf0 .\cf9 scrollRangeToVisible\cf0 (range)\
+    \}\
+    \
+    \
+    \
+    \cf2 //This is the function called every 1 second by timer2, it updates the displayed time remaining\
+\cf0     \cf3 func\cf0  updateTime() \{\
+        \cf3 if\cf0  !\cf7 isFailed\cf0  \{\
+            \cf7 currentTime\cf0  = \cf7 currentTime\cf0  - \cf6 1\cf0 \
+            \cf7 displayedTimer\cf0 .\cf4 text\cf0  = \cf4 String\cf0 (\cf7 currentTime\cf0 )\
+        \}\cf3 else\cf0 \{\
+            \cf7 timer2\cf0 .\cf9 invalidate\cf0 ()\
+        \}\
+        \
+    \}\
+    \
+    \
+    \cf2 //This function is called by timer if the question isn't answered successfully by the time limit\
+\cf0     \cf3 func\cf0  outOfTime() \{\
+        \cf3 if\cf0  !\cf7 isCorrect\cf0  \{\
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf5 "Out of time! Question failed!!"\cf0 \
+            \cf3 let\cf0  range = \cf9 NSMakeRange\cf0 (\cf7 questTextView\cf0 .\cf4 text\cf0 .\cf4 characters\cf0 .\cf4 count\cf0  - \cf6 1\cf0 , \cf6 0\cf0 )\
+            \cf7 questTextView\cf0 .\cf9 scrollRangeToVisible\cf0 (range)\
+            \cf7 isFailed\cf0  = \cf3 true\cf0 \
+        \}\
+    \}\
+    \
+    \
+    \
+    \
+    \
+    \cf2 //This is the function called by the start button, which generates random questions...\
+\cf0     \
+    \cf2 /*\
+     This function is in it's most basic form right now. It only creates math questions. It can be expanded upon later to create\
+     questions for other categories, but that is rather time consuming, but not particularly difficult programming-wise.\
+     For at least alpha, this function should probaly remain math-only.\
+     */\cf0 \
+    \
+    \cf3 func\cf0  getNewQuestion() \{\
+        \
+        \cf2 //the category of the questions is a randomly generated integer\
+\cf0         \cf3 var\cf0  questionCategory = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 0\cf0 ))+\cf6 1\cf0 \
+        \
+        \cf2 //the question and answer are stored in an array, the 0th position is the question and the 1st is the answer, the other 2 indexes are dummy answers\
+\cf0         \cf3 var\cf0  question = []\
+        \
+        \
+        \cf3 if\cf0  questionCategory == \cf6 1\cf0 \{       \cf2 //Math category\
+\cf0             \
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "Your randomly assigned topic is: Math!"\cf0 \
+            question = \cf8 createMathQuestion\cf0 ()\
+            \cf8 askQuestion\cf0 (question[\cf6 0\cf0 ] \cf3 as\cf0 ! \cf4 String\cf0 )\
+            \cf8 generateAnswerChoices\cf0 (question \cf3 as\cf0 ! \cf4 Array\cf0 <\cf4 String\cf0 >)\
+            \
+        \} \cf3 else\cf0  \cf3 if\cf0  questionCategory == \cf6 2\cf0 \{\
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "Your randomly assigned topic is: Language!"\cf0 \
+            \
+        \}\cf3 else\cf0  \cf3 if\cf0  questionCategory == \cf6 3\cf0  \{\
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "Your randomly assigned topic is: Sports!"\cf0 \
+            \
+        \}\cf3 else\cf0  \{\
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "Your randomly assigned topic is: Botany!"\cf0 \
+        \}\
+    \}\
+    \
+    \
+    \cf3 func\cf0  askQuestion(question: \cf4 String\cf0 ) \{\
+        \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "\\nYour question is: "\cf0  + question\
+        \
+    \}\
+    \
+    \
+    \cf2 //This function randomly assigns the answer and the fake answers to either A, B, or C\
+\cf0     \cf3 func\cf0  generateAnswerChoices(answers: \cf4 Array\cf0 <\cf4 String\cf0 >)\{\
+        \cf7 correctAnswerIndex\cf0  = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 3\cf0 ))\
+        \cf3 var\cf0  answerChoices = [\cf5 "A"\cf0 ,\cf5 "B"\cf0 ,\cf5 "C"\cf0 ]\
+        \cf3 var\cf0  dummy1Index = \cf7 correctAnswerIndex\cf0 \
+        \cf3 while\cf0  dummy1Index == \cf7 correctAnswerIndex\cf0  \{\
+            dummy1Index = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 3\cf0 ))\
+        \}\
+        \cf3 var\cf0  dummy2Index = dummy1Index\
+        \cf3 while\cf0  dummy2Index == dummy1Index || dummy2Index == \cf7 correctAnswerIndex\cf0  \{\
+            dummy2Index = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 3\cf0 ))\
+        \}\
+        answerChoices[\cf7 correctAnswerIndex\cf0 ] = answers[\cf6 1\cf0 ]\
+        answerChoices[dummy1Index] = answers[\cf6 2\cf0 ]\
+        answerChoices[dummy2Index] = answers[\cf6 3\cf0 ]\
+        \
+        \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "\\nChoice A: "\cf0  + answerChoices[\cf6 0\cf0 ] + \cf5 "\\nChoice B: "\cf0  + answerChoices[\cf6 1\cf0 ] + \cf5 "\\nChoice C: "\cf0  + answerChoices[\cf6 2\cf0 ]\
+        \
+    \}\
+    \
+    \
+    \cf2 //This function determines whether or not the button pressed corresponds to the correct answer\
+\cf0     \cf3 func\cf0  checkAnswer(answerChoice: \cf4 Int\cf0 )\{\
+        \cf7 timer\cf0 .\cf9 invalidate\cf0 ()\
+        \cf7 timer2\cf0 .\cf9 invalidate\cf0 ()\
+        \cf3 if\cf0  answerChoice == \cf7 correctAnswerIndex\cf0  \{\
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "\\nCorrect!"\cf0 \
+            \
+        \}\cf3 else\cf0  \{\
+            \cf7 isFailed\cf0  = \cf3 true\cf0 \
+            \cf7 questTextView\cf0 .\cf4 text\cf0  = \cf7 questTextView\cf0 .\cf4 text\cf0  + \cf5 "\\nIncorrect!"\cf0 \
+        \}\
+        \cf3 let\cf0  range = \cf9 NSMakeRange\cf0 (\cf7 questTextView\cf0 .\cf4 text\cf0 .\cf4 characters\cf0 .\cf4 count\cf0  - \cf6 1\cf0 , \cf6 0\cf0 )\
+        \cf7 questTextView\cf0 .\cf9 scrollRangeToVisible\cf0 (range)\
+    \}\
+    \
+    \
+    \
+    \
+    \
+    \cf2 //This function generates a random math problem for the user to solve, along with the answer and 2 dummy/fake answer choices\
+\cf0     \cf3 func\cf0  createMathQuestion() -> \cf4 Array\cf0 <\cf4 String\cf0 > \{\
+        \
+        \cf3 var\cf0  firstNum = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 1000\cf0 ))\
+        \cf3 var\cf0  secondNum = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 1000\cf0 ))\
+        \cf3 var\cf0  operationNum = \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 2\cf0 ))\
+        \cf3 var\cf0  operationList = [\cf5 "+"\cf0 , \cf5 "-"\cf0 ]\
+        \cf3 var\cf0  operation = operationList[operationNum]\
+        \
+        \cf3 var\cf0  question = \cf4 String\cf0 (firstNum) + \cf5 " "\cf0  + \cf4 String\cf0 (operation) + \cf5 " "\cf0  + \cf4 String\cf0 (secondNum)\
+        \
+        \cf3 var\cf0  answer = \cf5 "0"\cf0 \
+        \
+        \cf3 if\cf0  operation == \cf5 "+"\cf0 \{\
+            answer = \cf4 String\cf0 (firstNum + secondNum)\
+        \} \cf3 else\cf0  \cf3 if\cf0  operation == \cf5 "-"\cf0 \{\
+            answer = \cf4 String\cf0 (firstNum - secondNum)\
+        \}\cf3 else\cf0 \{\
+            \cf9 print\cf0 (\cf5 "uhhh i need to implement * and /"\cf0 )\
+        \}\
+        \
+        \cf3 var\cf0  dummyAnswer1 = \cf4 String\cf0 (\cf4 Int\cf0 (answer)! + \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 70\cf0 )) - \cf6 35\cf0 )\
+        \cf3 var\cf0  dummyAnswer2 = \cf4 String\cf0 (\cf4 Int\cf0 (answer)! + \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 70\cf0 )) - \cf6 35\cf0 )\
+        \
+        \cf3 while\cf0  dummyAnswer1 == answer || dummyAnswer2 == answer \{\
+            dummyAnswer1 = \cf4 String\cf0 (\cf4 Int\cf0 (answer)! + \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 70\cf0 )) - \cf6 35\cf0 )\
+            dummyAnswer2 = \cf4 String\cf0 (\cf4 Int\cf0 (answer)! + \cf4 Int\cf0 (\cf9 arc4random_uniform\cf0 (\cf6 70\cf0 )) - \cf6 35\cf0 )\
+        \}\
+        \
+        \cf3 return\cf0  [question,answer,dummyAnswer1,dummyAnswer2]\
+    \}\
+    \
+    \cf3 @IBAction\cf0  \cf3 func\cf0  selectedChoiceA(sender: \cf4 AnyObject\cf0 ) \{\
+        \cf8 checkAnswer\cf0 (\cf6 0\cf0 )\
+    \}\
+    \
+    \cf3 @IBAction\cf0  \cf3 func\cf0  selectedChoiceB(sender: \cf4 AnyObject\cf0 ) \{\
+        \cf8 checkAnswer\cf0 (\cf6 1\cf0 )\
+    \}\
+    \
+    \cf3 @IBAction\cf0  \cf3 func\cf0  selectedChoiceC(sender: \cf4 AnyObject\cf0 ) \{\
+        \cf8 checkAnswer\cf0 (\cf6 2\cf0 )\
+    \}\
+    \
+    \
+    \cf3 func\cf0  success() \{\
+        \cf2 //Here is where core data comes in to level up the player and/or give them items\
+\cf0         \
+        \
+    \}\
+    \
+    \
+    }

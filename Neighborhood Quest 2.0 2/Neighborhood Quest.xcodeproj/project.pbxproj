@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		270DEE661DE39B0500F96996 /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DEE651DE39B0500F96996 /* PushButtonView.swift */; };
+		270DEE681DECD7DA00F96996 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DEE671DECD7DA00F96996 /* StatsViewController.swift */; };
+		270DEE6A1DECEDA000F96996 /* ExpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DEE691DECEDA000F96996 /* ExpButtonView.swift */; };
+		27330EC81DE0109400457315 /* QuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27330EC71DE0109400457315 /* QuestViewController.swift */; };
+		657FA7331DED0A0A001D0CC0 /* WalkAustin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 657FA7321DED0A0A001D0CC0 /* WalkAustin.gpx */; };
+		9F91BD9E1DDFB32B00981627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F91BD9D1DDFB32B00981627 /* AppDelegate.swift */; };
+		9F91BDA01DDFB32B00981627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F91BD9F1DDFB32B00981627 /* ViewController.swift */; };
+		9F91BDA31DDFB32B00981627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F91BDA11DDFB32B00981627 /* Main.storyboard */; };
+		9F91BDA61DDFB32B00981627 /* Neighborhood_Quest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F91BDA41DDFB32B00981627 /* Neighborhood_Quest.xcdatamodeld */; };
+		9F91BDA81DDFB32B00981627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F91BDA71DDFB32B00981627 /* Assets.xcassets */; };
+		9F91BDAB1DDFB32B00981627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F91BDA91DDFB32B00981627 /* LaunchScreen.storyboard */; };
+		9F91BDB61DDFB32B00981627 /* Neighborhood_QuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F91BDB51DDFB32B00981627 /* Neighborhood_QuestTests.swift */; };
+		9F91BDC11DDFB32B00981627 /* Neighborhood_QuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F91BDC01DDFB32B00981627 /* Neighborhood_QuestUITests.swift */; };
+		9F91BDCF1DDFBFA300981627 /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F91BDCE1DDFBFA300981627 /* PublicArt.json */; };
+		9F91BDD11DDFC01900981627 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F91BDD01DDFC01900981627 /* Artwork.swift */; };
+		9FE1B9511DF4A98F00A8C849 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B9501DF4A98F00A8C849 /* TitleViewController.swift */; };
+		AD4DAD2A1DF5BF9400CD859D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4DAD291DF5BF9400CD859D /* Social.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F91BDB21DDFB32B00981627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F91BD921DDFB32B00981627 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F91BD991DDFB32B00981627;
+			remoteInfo = "Neighborhood Quest";
+		};
+		9F91BDBD1DDFB32B00981627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F91BD921DDFB32B00981627 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F91BD991DDFB32B00981627;
+			remoteInfo = "Neighborhood Quest";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		270DEE651DE39B0500F96996 /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
+		270DEE671DECD7DA00F96996 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		270DEE691DECEDA000F96996 /* ExpButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpButtonView.swift; sourceTree = "<group>"; };
+		27330EC71DE0109400457315 /* QuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestViewController.swift; sourceTree = "<group>"; };
+		657FA7321DED0A0A001D0CC0 /* WalkAustin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WalkAustin.gpx; sourceTree = "<group>"; };
+		9F91BD9A1DDFB32B00981627 /* Neighborhood Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighborhood Quest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F91BD9D1DDFB32B00981627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F91BD9F1DDFB32B00981627 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F91BDA21DDFB32B00981627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F91BDA51DDFB32B00981627 /* Neighborhood_Quest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Neighborhood_Quest.xcdatamodel; sourceTree = "<group>"; };
+		9F91BDA71DDFB32B00981627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F91BDAA1DDFB32B00981627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F91BDAC1DDFB32B00981627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F91BDB11DDFB32B00981627 /* Neighborhood QuestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neighborhood QuestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F91BDB51DDFB32B00981627 /* Neighborhood_QuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhood_QuestTests.swift; sourceTree = "<group>"; };
+		9F91BDB71DDFB32B00981627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F91BDBC1DDFB32B00981627 /* Neighborhood QuestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neighborhood QuestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F91BDC01DDFB32B00981627 /* Neighborhood_QuestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhood_QuestUITests.swift; sourceTree = "<group>"; };
+		9F91BDC21DDFB32B00981627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F91BDCE1DDFBFA300981627 /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PublicArt.json; sourceTree = "<group>"; };
+		9F91BDD01DDFC01900981627 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		9FE1B9501DF4A98F00A8C849 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		AD4DAD291DF5BF9400CD859D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F91BD971DDFB32B00981627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD4DAD2A1DF5BF9400CD859D /* Social.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F91BDAE1DDFB32B00981627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F91BDB91DDFB32B00981627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F91BD911DDFB32B00981627 = {
+			isa = PBXGroup;
+			children = (
+				AD4DAD291DF5BF9400CD859D /* Social.framework */,
+				270DEE691DECEDA000F96996 /* ExpButtonView.swift */,
+				9F91BD9C1DDFB32B00981627 /* Neighborhood Quest */,
+				9F91BDB41DDFB32B00981627 /* Neighborhood QuestTests */,
+				9F91BDBF1DDFB32B00981627 /* Neighborhood QuestUITests */,
+				9F91BD9B1DDFB32B00981627 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F91BD9B1DDFB32B00981627 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F91BD9A1DDFB32B00981627 /* Neighborhood Quest.app */,
+				9F91BDB11DDFB32B00981627 /* Neighborhood QuestTests.xctest */,
+				9F91BDBC1DDFB32B00981627 /* Neighborhood QuestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F91BD9C1DDFB32B00981627 /* Neighborhood Quest */ = {
+			isa = PBXGroup;
+			children = (
+				9F91BD9D1DDFB32B00981627 /* AppDelegate.swift */,
+				9F91BD9F1DDFB32B00981627 /* ViewController.swift */,
+				9F91BDA11DDFB32B00981627 /* Main.storyboard */,
+				9FE1B9501DF4A98F00A8C849 /* TitleViewController.swift */,
+				27330EC71DE0109400457315 /* QuestViewController.swift */,
+				270DEE671DECD7DA00F96996 /* StatsViewController.swift */,
+				270DEE651DE39B0500F96996 /* PushButtonView.swift */,
+				9F91BDA71DDFB32B00981627 /* Assets.xcassets */,
+				9F91BDCE1DDFBFA300981627 /* PublicArt.json */,
+				9F91BDA91DDFB32B00981627 /* LaunchScreen.storyboard */,
+				9F91BDAC1DDFB32B00981627 /* Info.plist */,
+				9F91BDA41DDFB32B00981627 /* Neighborhood_Quest.xcdatamodeld */,
+				9F91BDD01DDFC01900981627 /* Artwork.swift */,
+				657FA7321DED0A0A001D0CC0 /* WalkAustin.gpx */,
+			);
+			path = "Neighborhood Quest";
+			sourceTree = "<group>";
+		};
+		9F91BDB41DDFB32B00981627 /* Neighborhood QuestTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F91BDB51DDFB32B00981627 /* Neighborhood_QuestTests.swift */,
+				9F91BDB71DDFB32B00981627 /* Info.plist */,
+			);
+			path = "Neighborhood QuestTests";
+			sourceTree = "<group>";
+		};
+		9F91BDBF1DDFB32B00981627 /* Neighborhood QuestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F91BDC01DDFB32B00981627 /* Neighborhood_QuestUITests.swift */,
+				9F91BDC21DDFB32B00981627 /* Info.plist */,
+			);
+			path = "Neighborhood QuestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F91BD991DDFB32B00981627 /* Neighborhood Quest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F91BDC51DDFB32B00981627 /* Build configuration list for PBXNativeTarget "Neighborhood Quest" */;
+			buildPhases = (
+				9F91BD961DDFB32B00981627 /* Sources */,
+				9F91BD971DDFB32B00981627 /* Frameworks */,
+				9F91BD981DDFB32B00981627 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Neighborhood Quest";
+			productName = "Neighborhood Quest";
+			productReference = 9F91BD9A1DDFB32B00981627 /* Neighborhood Quest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F91BDB01DDFB32B00981627 /* Neighborhood QuestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F91BDC81DDFB32B00981627 /* Build configuration list for PBXNativeTarget "Neighborhood QuestTests" */;
+			buildPhases = (
+				9F91BDAD1DDFB32B00981627 /* Sources */,
+				9F91BDAE1DDFB32B00981627 /* Frameworks */,
+				9F91BDAF1DDFB32B00981627 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F91BDB31DDFB32B00981627 /* PBXTargetDependency */,
+			);
+			name = "Neighborhood QuestTests";
+			productName = "Neighborhood QuestTests";
+			productReference = 9F91BDB11DDFB32B00981627 /* Neighborhood QuestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F91BDBB1DDFB32B00981627 /* Neighborhood QuestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F91BDCB1DDFB32B00981627 /* Build configuration list for PBXNativeTarget "Neighborhood QuestUITests" */;
+			buildPhases = (
+				9F91BDB81DDFB32B00981627 /* Sources */,
+				9F91BDB91DDFB32B00981627 /* Frameworks */,
+				9F91BDBA1DDFB32B00981627 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F91BDBE1DDFB32B00981627 /* PBXTargetDependency */,
+			);
+			name = "Neighborhood QuestUITests";
+			productName = "Neighborhood QuestUITests";
+			productReference = 9F91BDBC1DDFB32B00981627 /* Neighborhood QuestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F91BD921DDFB32B00981627 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Kenneth James";
+				TargetAttributes = {
+					9F91BD991DDFB32B00981627 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					9F91BDB01DDFB32B00981627 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9F91BD991DDFB32B00981627;
+					};
+					9F91BDBB1DDFB32B00981627 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9F91BD991DDFB32B00981627;
+					};
+				};
+			};
+			buildConfigurationList = 9F91BD951DDFB32B00981627 /* Build configuration list for PBXProject "Neighborhood Quest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F91BD911DDFB32B00981627;
+			productRefGroup = 9F91BD9B1DDFB32B00981627 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F91BD991DDFB32B00981627 /* Neighborhood Quest */,
+				9F91BDB01DDFB32B00981627 /* Neighborhood QuestTests */,
+				9F91BDBB1DDFB32B00981627 /* Neighborhood QuestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F91BD981DDFB32B00981627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F91BDCF1DDFBFA300981627 /* PublicArt.json in Resources */,
+				657FA7331DED0A0A001D0CC0 /* WalkAustin.gpx in Resources */,
+				9F91BDAB1DDFB32B00981627 /* LaunchScreen.storyboard in Resources */,
+				9F91BDA81DDFB32B00981627 /* Assets.xcassets in Resources */,
+				9F91BDA31DDFB32B00981627 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F91BDAF1DDFB32B00981627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F91BDBA1DDFB32B00981627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F91BD961DDFB32B00981627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F91BDA01DDFB32B00981627 /* ViewController.swift in Sources */,
+				27330EC81DE0109400457315 /* QuestViewController.swift in Sources */,
+				270DEE681DECD7DA00F96996 /* StatsViewController.swift in Sources */,
+				9F91BD9E1DDFB32B00981627 /* AppDelegate.swift in Sources */,
+				9F91BDD11DDFC01900981627 /* Artwork.swift in Sources */,
+				9FE1B9511DF4A98F00A8C849 /* TitleViewController.swift in Sources */,
+				270DEE661DE39B0500F96996 /* PushButtonView.swift in Sources */,
+				270DEE6A1DECEDA000F96996 /* ExpButtonView.swift in Sources */,
+				9F91BDA61DDFB32B00981627 /* Neighborhood_Quest.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F91BDAD1DDFB32B00981627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F91BDB61DDFB32B00981627 /* Neighborhood_QuestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F91BDB81DDFB32B00981627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F91BDC11DDFB32B00981627 /* Neighborhood_QuestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F91BDB31DDFB32B00981627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F91BD991DDFB32B00981627 /* Neighborhood Quest */;
+			targetProxy = 9F91BDB21DDFB32B00981627 /* PBXContainerItemProxy */;
+		};
+		9F91BDBE1DDFB32B00981627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F91BD991DDFB32B00981627 /* Neighborhood Quest */;
+			targetProxy = 9F91BDBD1DDFB32B00981627 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9F91BDA11DDFB32B00981627 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F91BDA21DDFB32B00981627 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F91BDA91DDFB32B00981627 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F91BDAA1DDFB32B00981627 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F91BDC31DDFB32B00981627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F91BDC41DDFB32B00981627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F91BDC61DDFB32B00981627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Neighborhood Quest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Neighborhood-Quest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F91BDC71DDFB32B00981627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Neighborhood Quest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Neighborhood-Quest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9F91BDC91DDFB32B00981627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Neighborhood QuestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Neighborhood-QuestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neighborhood Quest.app/Neighborhood Quest";
+			};
+			name = Debug;
+		};
+		9F91BDCA1DDFB32B00981627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Neighborhood QuestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Neighborhood-QuestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neighborhood Quest.app/Neighborhood Quest";
+			};
+			name = Release;
+		};
+		9F91BDCC1DDFB32B00981627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Neighborhood QuestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Neighborhood-QuestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Neighborhood Quest";
+			};
+			name = Debug;
+		};
+		9F91BDCD1DDFB32B00981627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Neighborhood QuestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Neighborhood-QuestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Neighborhood Quest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F91BD951DDFB32B00981627 /* Build configuration list for PBXProject "Neighborhood Quest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F91BDC31DDFB32B00981627 /* Debug */,
+				9F91BDC41DDFB32B00981627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F91BDC51DDFB32B00981627 /* Build configuration list for PBXNativeTarget "Neighborhood Quest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F91BDC61DDFB32B00981627 /* Debug */,
+				9F91BDC71DDFB32B00981627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F91BDC81DDFB32B00981627 /* Build configuration list for PBXNativeTarget "Neighborhood QuestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F91BDC91DDFB32B00981627 /* Debug */,
+				9F91BDCA1DDFB32B00981627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F91BDCB1DDFB32B00981627 /* Build configuration list for PBXNativeTarget "Neighborhood QuestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F91BDCC1DDFB32B00981627 /* Debug */,
+				9F91BDCD1DDFB32B00981627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9F91BDA41DDFB32B00981627 /* Neighborhood_Quest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9F91BDA51DDFB32B00981627 /* Neighborhood_Quest.xcdatamodel */,
+			);
+			currentVersion = 9F91BDA51DDFB32B00981627 /* Neighborhood_Quest.xcdatamodel */;
+			path = Neighborhood_Quest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9F91BD921DDFB32B00981627 /* Project object */;
+}
